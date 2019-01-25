@@ -1,18 +1,21 @@
 <html>
-  <body>
-    <div class="row col-md-12">
-      <div class="col col-md-2">Enter Amount: <input [(ngModel)]="amount" type="number"></div>
-      <div class="col col-md-3">Select % for Savings: <input [(ngModel)]="percentage" type="number"> </div>
-      <div class="col col-md-1"><input type="button" class="btn btn-success" value="Submit" (click)="submitAmount()"></div>
-      <div class="col col-md-1"><input type="button" class="btn btn-warning" value="Reset"></div>
-    </div>
-    <hr/>
-    <div class="row col-md-12" *ngIf="this.isSplitEnabled"> 
-      <!-- <div class="col col-md-6"><app-spending></app-spending></div> -->
-      <div class="col col-md-6"><app-saving [parentData]="calculatedAmount"></app-saving></div>
-    </div>
-<router-outlet></router-outlet>
 
-  </body>
+<body>
+  <div class="row col-md-12">
+    <div class="col col-md-3">Enter Amount: <input [(ngModel)]="amount" type="number"></div>
+    <div class="col col-md-3">Select % for Savings: <input [(ngModel)]="percentage" type="number"> </div>
+    <div class="col col-md-1"><input type="button" class="btn btn-success" value="Submit" (click)="submitAmount()"></div>
+    <div class="col col-md-1"><input type="button" class="btn btn-warning" value="Reset"></div>
+  </div>
+  <hr />
+  <div class="row col-md-12" *ngIf="this.isSplitEnabled">
+    <!-- <div class="col col-md-6"><app-spending></app-spending></div> -->
+    <div class="col col-md-6">
+      <app-saving [parentData]="calculatedAmount"></app-saving>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+
+</body>
+
 </html>
-

@@ -22,7 +22,7 @@ export class AllocationComponent implements OnInit {
   {
     if(this.amount > 0 && this.percentage > 0){
       this.isSplitEnabled = true;
-      this.calculatedAmount = Math.round(this.amountService.calculateSavings(this.amount,this.percentage));
+      this.calculatedAmount = this.amountService.calculateSavings(this.amount,this.percentage);
     }
     else{
       alert('Gotta put the values daug')

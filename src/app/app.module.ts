@@ -9,9 +9,17 @@ import {AmountService} from './service/amount.service';
 import {CategoryService} from './service/category.service';
 import { SavingsDetailComponent } from './allocation/savings-detail/savings-detail.component';
 import {AppRoutingModule} from './app-routing.module';
+import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, AppRoutingModule ],
+  imports:      [ BrowserModule, FormsModule, AppRoutingModule,
+                  HttpClientModule,
+                  HttpClientInMemoryWebApiModule.forRoot(
+                    InMemoryDataService, { dataEncapsulation: false }
+                  )
+                ],
   declarations: [ AppComponent, AllocationComponent,  SavingComponent, SavingsDetailComponent ],
   bootstrap:    [ AppComponent ], 
   providers: [AmountService, 
