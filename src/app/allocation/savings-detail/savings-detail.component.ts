@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {CategoryService} from '../../service/category.service';
 import {CategoryModel}  from '../../model/category.model';
 @Component({
@@ -10,12 +10,17 @@ import {CategoryModel}  from '../../model/category.model';
 export class SavingsDetailComponent implements OnInit {
   category:CategoryModel;
   constructor(private route: ActivatedRoute, 
-  private categoryService:CategoryService) { 
+  private categoryService:CategoryService, 
+  private router:Router) { 
    }
 
   ngOnInit():void {
+    this.router.events.subscribe(
+      () => {
     this.getCategory();
-  }
+  })
+}
+
 
   getCategory():void{
      const id = +this.route.snapshot.paramMap.get('id');

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import {APP_BASE_HREF} from '@angular/common';
 import { AppComponent } from './app.component';
 import { AllocationComponent } from './allocation/allocation.component';
 import { SavingComponent } from './allocation/saving/saving.component';
@@ -15,6 +15,7 @@ import {AppRoutingModule} from './app-routing.module';
   declarations: [ AppComponent, AllocationComponent,  SavingComponent, SavingsDetailComponent ],
   bootstrap:    [ AppComponent ], 
   providers: [AmountService, 
-            CategoryService]
+            CategoryService,
+            {provide: APP_BASE_HREF, useValue: '/'}]
 })
 export class AppModule { }
