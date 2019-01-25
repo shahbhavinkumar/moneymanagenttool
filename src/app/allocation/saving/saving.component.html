@@ -1,0 +1,19 @@
+Amount Remaining To Allocate:   ${{amount}}
+<br/>
+
+<div class="row">
+	 <div class="col-md-6">Enter Category Name: <input [(ngModel)]="txtCategory" type="text"></div>
+   <div class="col-md-4">Enter Amount: <input [(ngModel)]="txtAmount" type="number"></div>
+</div>
+
+  <input type="button" (click)="addNewSavingsCategory(txtAmount, txtCategory)" value="Add"> 
+
+	<div> 
+    <div *ngFor="let item of category">
+      <a routerLink="/detail/{{item.id}}">
+      {{item.id}}:{{item.amount}}:{{item.name}}
+      </a>
+    </div>
+  </div>
+
+
