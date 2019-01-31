@@ -13,15 +13,14 @@ export class CategoryService
   constructor(
     private http: HttpClient) { }
 
-    private heroesUrl = '/in-memory-data-service/categories'; 
+    private webApiURL = '/in-memory-data-service/categories'; 
 
     getCategoryData(): Observable<CategoryModel[]>{
       return of(Category);
     }
 
-    
     getCategoriesFromHttp (): Observable<CategoryModel[]> {
-      return this.http.get<CategoryModel[]>(this.heroesUrl)
+      return this.http.get<CategoryModel[]>(this.webApiURL)
     }
 
     add(id:number, amount:number,category:string){
