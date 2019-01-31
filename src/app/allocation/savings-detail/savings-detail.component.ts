@@ -25,6 +25,7 @@ export class SavingsDetailComponent implements OnInit {
   getCategory(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.categoryService.getCategory(id).subscribe(c => this.category = c);
+    
   }
 
 }

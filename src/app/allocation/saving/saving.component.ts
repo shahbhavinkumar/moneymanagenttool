@@ -18,8 +18,8 @@ export class SavingComponent implements OnInit {
 
   constructor(private categoryService: CategoryService) { }
 
-  ngOnInit():void {
-     this.categoryService.getCategoryData()
+  ngOnInit():void {debugger
+     this.categoryService.getCategoriesFromHttp()
      .subscribe(c => this.category = c);
   }
 
