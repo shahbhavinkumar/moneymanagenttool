@@ -8,10 +8,10 @@ import { Injectable } from '@angular/core';
 export class InMemoryDataService implements InMemoryDbService {
 
   createDb(){
-      const categories =[
+      const Category =[
         {id:1, amount:2500, name:"Rent" }
       ];
-      return {categories}
+      return {Category}
     }
   
     genId(c: CategoryModel[]): number {
